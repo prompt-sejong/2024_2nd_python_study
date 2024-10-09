@@ -8,3 +8,6 @@ TODO:
 
 1. from module import * 와 import module의 차이를 조사하고 발표하세요.
 2. 파이썬 인터프리터가 import module 명령어를 실행할 때 어떤 과정을 거치는지 조사하고 발표하세요.
+
+
+다음 스터디 시간때 뵙시다 ^^
