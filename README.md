@@ -16,11 +16,13 @@
 ### 01. 레포지토리 포크(fork)
 파이썬 스터디 과제 제출을 위해 해당 Repor를 자신의 계정으로 Fork한다.
 ![캡처](/img/img1.png)
+
 ![캡처](/img/img2.png)
 
 ### 02. 로컬 Git Clone. ([Git 사전 설치 필수](https://sfida.tistory.com/46))
 자신의 컴퓨터로 Repo를 복제한다.
 ![캡처](/img/img3.png)
+
 ![캡처](/img/img4.png)
 
 ### 03. 과제 작성.
@@ -31,9 +33,11 @@ WEEK0X 폴더 하위에 자기 깃허브 닉네임으로 폴더 생성하고 과
 ![캡처](/img/img6.png)
 과제 완료 후 Commit 메세지 작성 후 커밋
 ![캡처](/img/img7.png)
+
 ![캡처](/img/img8.png)
 
 ### 04. Pull Request 생성
 Push 한 자신의 GitHub Repo로 이동, ahead된 commit이 있는 지, 확인 후 Pull request
 ![캡처](/img/img9.png)
+
 ![캡처](/img/img10.png)
