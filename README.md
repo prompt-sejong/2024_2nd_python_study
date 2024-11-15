@@ -7,7 +7,7 @@
 |이동현|[tabsanro](https://github.com/tabsanro)|스터디 장|
 |정은수|[eunsoo03181](https://github.com/eunsoo03181)|스터디 원|
 |손해수|[S00STH](https://github.com/S00STH)|스터디 원|
-|이태식|[]()|스터디 원|
+|이태식|[taesik-lee303](https://github.com/taesik-lee303)|스터디 원|
 |김태오|[taeojong](https://github.com/taeojong)|스터디 원|
 |김무강|[m02k07k25](https://github.com/m02k07k25)|스터디 원|
 |전계웅|[kyewoong1115](https://github.com/kyewoong1115)|스터디 원|
