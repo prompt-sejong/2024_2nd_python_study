@@ -38,18 +38,13 @@ def set_dis(line, str1, str2, dis):     # 역 간의 거리 설정
     list2 = [i for i, value in enumerate(list_df) if value[2] == str2]
 
     for i in list1:
-        if list_df[i] == line:
+        if list_df[i][3] == line:
             station1 = i
     for i in list2:
-        if list_df[i] == line:
+        if list_df[i][3] == line:
             station2 = i
-    heapq.heappush(edge[station1],())
-
-
-
-# for i in range()
-
-# 1~... 호선까지 처리
+    heapq.heappush(edge[station1],(station2, dis))
+    heapq.heappush(edge[station2],(station1, dis))
 
 
 # print(list_df)
@@ -60,12 +55,19 @@ cost_list = [INF] * 691
 edge = {}
 for i in range(0,len(list_df),1):
     edge[i] = []
-print(len(edge))
+
+for i in range(0,61):   # 1호선1 (소요산~인천)
+    set_dis('1호선',list_df[i][2], list_df[i+1][2], 1)
+for i in range(62,64):   # 1호선2 (청산~연천)
+    set_dis('1호선',list_df[i][2], list_df[i+1][2], 1)
+for i in range(62,64):   # 1호선2 (청산~연천)
+    set_dis('1호선',list_df[i][2], list_df[i+1][2], 1)
+
 
 list1 = [i for i, value in enumerate(list_df) if value[2] == "신도림"]  # 0부터여서 -1, 맨 위에 태그 없애서 -1 -> 총 -2
 # -> 인덱스 정보를 나타냄
 
 print(list1)
 print(list_df[40])
-
+print(list_df[40][3] == '1호선')
 # print(dijkstra(0))
