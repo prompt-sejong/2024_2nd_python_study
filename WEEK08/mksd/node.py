@@ -33,7 +33,9 @@ def count_dijkstra(start,destination):
         return (-2,-1)               # 도착역 이름 오류
     if num == -1:
         return (-1,-1)               # 출발역 이름 오류
-    
+    if num == dest:                  # 출발역과 도착역이 같은 경우
+        return 0, str(list_df[num])
+
     d, prev = dijkstra(num)
     # 경로 추적
     path = get_path(prev, dest)
@@ -43,11 +45,17 @@ def count_dijkstra(start,destination):
     for i in range(len(path) - 1):
         current_station = list_df[path[i]]      # 인덱스에서 현재 역 이름으로 변경
         next_station = list_df[path[i + 1]]     # 다음 역 이름
-
+        if not route:
+            if current_station[2] != next_station[2]:
+                route += (f"{current_station[2]}({next_station[3]}) -> ")
+                continue
         if (current_station[2] != next_station[2]):  # 중복 방지
-            route += (f"{current_station[2]}\t->\t")  # 역(호선) 형식으로 추가        # 리스트로 할려면 route = [], route.append(~~)
+            route += (f"{current_station[2]}({current_station[3]}) -> ")  # 역(호선) 형식으로 추가        # 리스트로 할려면 route = [], route.append(~~)
             # ({current_station[3]}) : 호선인데 에러 많이 남. ({list_df[path[-1]][3]})
-    route += (f"{list_df[path[-1]][2]}")  # 최종 도착역 추가
+    if len(path) < 2: 
+        route += (f"{list_df[path[-1]][2]}({list_df[path[-1]][3]})")  # 최종 도착역 추가
+
+    route += (f"{list_df[path[-1]][2]}({list_df[path[-2]][3]})")  # 최종 도착역 추가
 
     return d[dest], route
 
@@ -248,10 +256,10 @@ def trans():
 # print(count_dijkstra("용산","공덕")) # 2
 # print(count_dijkstra("구로","샛강"))      # 5
 # print(count_dijkstra("구로","영등포구청")) # 3
-# # print(count_dijkstra("구로","이촌"))      # 7
+# print(count_dijkstra("구로","이촌"))      # 7
 # print(count_dijkstra("구로","대흥(서강대앞)"))      # 8
 # print(count_dijkstra("대방","노들"))      # 2
-# print(count_dijkstra("종로3가","동대문역사문화공원"))      # 2
+# print(count_dijkstra("종각","동대문역사문화공원"))      # 2
 # print(count_dijkstra("신원","잠실나루"))      # 16
 # print(count_dijkstra("원시","월드컵경기장(성산)"))      # 17
 

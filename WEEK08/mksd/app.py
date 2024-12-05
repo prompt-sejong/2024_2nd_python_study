@@ -3,7 +3,7 @@ from node import *           # streamlit run WEEK08/mksd/app.py
 
 st.title('서울 지하철 길찾기 앱')
 
-stations = list({item[2] for item in list_df})
+stations = sorted({item[2] for item in list_df})
 
 current_dir = os.path.dirname(os.path.abspath(__file__))
 image_path = os.path.join(current_dir, "subway.jpg")
@@ -41,6 +41,5 @@ if st.button("노선 찾기"):
 
 st.image(
     image_path,  
-    caption="지하철 노선도",
-    use_container_width=True 
+    caption="지하철 노선도"
 )
