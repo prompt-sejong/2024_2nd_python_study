@@ -33,7 +33,7 @@ if st.button("노선 찾기"):
         else:
             # 결과 출력
             st.write("### 경로 정보")
-            st.write(f"1. 걸리는 역의 개수: **{station_count}개**")         # 환승역말고만 호선 넣기?
+            st.write(f"1. 걸리는 역의 개수: **{station_count}개**")        
             st.write(f"2. 경로: ")
             st.write(f"{route}")
     else:
